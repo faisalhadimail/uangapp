@@ -142,13 +142,13 @@ export function AddTransactionSheet({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="bottom" className="max-h-[92vh] p-0 sm:max-w-md sm:mx-auto sm:rounded-t-2xl sm:rounded-b-2xl sm:mb-6 sm:border">
-        <SheetHeader className="px-5 pt-5 pb-3">
+      <SheetContent side="bottom" className="h-[95vh] max-h-[95vh] p-0 sm:max-w-md sm:mx-auto sm:rounded-t-2xl sm:mb-6 sm:border flex flex-col">
+        <SheetHeader className="px-5 pt-5 pb-3 shrink-0">
           <SheetTitle>Tambah Transaksi</SheetTitle>
           <SheetDescription className="sr-only">Catat pemasukan, pengeluaran, atau transfer antar rekening.</SheetDescription>
         </SheetHeader>
 
-        <ScrollArea className="thin-scrollbar max-h-[60vh] px-5 pb-4">
+        <ScrollArea className="thin-scrollbar flex-1 min-h-0 px-5 pb-4 overflow-y-auto">
           <div className="space-y-5">
             {/* Type selector */}
             <div className="grid grid-cols-3 gap-2 rounded-2xl bg-secondary p-1">
@@ -296,7 +296,7 @@ export function AddTransactionSheet({
           </div>
         </ScrollArea>
 
-        <SheetFooter className="border-t bg-card px-5 py-3">
+        <SheetFooter className="border-t bg-card px-5 py-3 shrink-0">
           <Button
             onClick={handleSubmit}
             disabled={submitting}
