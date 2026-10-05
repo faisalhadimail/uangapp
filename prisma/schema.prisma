@@ -1,0 +1,419 @@
+// Prisma schema for Family Finance App (Tahap 1 + 2 + 3 + 4 + 5 + Auth)
+// Models: User, Session, Category, Account, Transaction, Budget, Saving, Bill, PaidBill, Debt,
+//         WhatsAppTemplate, WhatsAppRecipient, ScheduledReport, ScheduledReportLog,
+//         FamilyMember, Notification, FinancialInsight, FinancialTarget, BackupRecord, ReceiptScan
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// User untuk autentikasi login.
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  /// Optional link ke FamilyMember (untuk attribusi transaksi)
+  familyMemberId String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  sessions Session[]
+}
+
+/// Session token untuk login persistence (7 hari).
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  /// ISO datetime kapan session berakhir
+  expiresAt String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+/// Kategori transaksi (pemasukan / pengeluaran)
+model Category {
+  id        String   @id @default(cuid())
+  name      String
+  /// "income" | "expense"
+  type      String
+  /// Hex color used for icon background, e.g. "#10b981"
+  color     String   @default("#10b981")
+  /// Lucide icon name, e.g. "UtensilsCrossed"
+  icon      String   @default("Wallet")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  transactions Transaction[]
+  budgets      Budget?
+}
+
+/// Rekening / dompet
+model Account {
+  id             String   @id @default(cuid())
+  name           String
+  /// "bank" | "cash" | "ewallet"
+  type           String   @default("cash")
+  initialBalance Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  transactionsFrom Transaction[] @relation("TransactionsFromAccount")
+  transactionsTo   Transaction[] @relation("TransactionsToAccount")
+}
+
+/// Transaksi: pemasukan / pengeluaran / transfer
+model Transaction {
+  id          String   @id @default(cuid())
+  /// "income" | "expense" | "transfer"
+  type        String
+  amount      Int
+  description String
+  /// ISO date string (YYYY-MM-DD) — easier to work with in SQLite
+  date        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  accountId     String
+  account       Account   @relation("TransactionsFromAccount", fields: [accountId], references: [id])
+  toAccountId    String?
+  toAccount      Account? @relation("TransactionsToAccount", fields: [toAccountId], references: [id], onDelete: SetNull)
+
+  /// Tahap 4: anggota keluarga yang mencatat transaksi (opsional untuk data lama)
+  memberId      String?
+  member        FamilyMember? @relation(fields: [memberId], references: [id], onDelete: SetNull)
+
+  @@index([date])
+  @@index([type])
+  @@index([categoryId])
+  @@index([memberId])
+}
+
+/// Anggaran bulanan per kategori pengeluaran.
+/// Satu kategori hanya boleh punya satu budget (unique).
+model Budget {
+  id         String   @id @default(cuid())
+  categoryId String   @unique
+  amount     Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+}
+
+/// Target tabungan atau dana darurat.
+model Saving {
+  id            String   @id @default(cuid())
+  name          String
+  /// "goal" | "emergency"
+  type          String   @default("goal")
+  targetAmount  Int
+  currentAmount Int      @default(0)
+  /// ISO date YYYY-MM-DD, optional
+  targetDate    String?
+  /// Optional hex color
+  color         String   @default("#10b981")
+  /// Optional Lucide icon name
+  icon          String   @default("PiggyBank")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+/// Tagihan berulang (cicilan, langganan, utilitas).
+model Bill {
+  id          String   @id @default(cuid())
+  name        String
+  amount      Int
+  /// Day of month when bill is due (1-31)
+  dueDay      Int
+  /// "monthly" | "weekly" | "once"
+  recurrence  String   @default("monthly")
+  /// Optional hex color
+  color       String   @default("#0ea5e9")
+  /// Optional Lucide icon name
+  icon        String   @default("Receipt")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  paidRecords PaidBill[]
+}
+
+/// Mencatat tagihan yang sudah dibayar untuk bulan tertentu.
+model PaidBill {
+  id      String   @id @default(cuid())
+  billId  String
+  /// YYYY-MM month this bill was paid in
+  month   String
+  paidAt  DateTime @default(now())
+
+  bill Bill @relation(fields: [billId], references: [id], onDelete: Cascade)
+
+  @@unique([billId, month])
+}
+
+/// Utang atau piutang — distinguished by `type` field.
+model Debt {
+  id          String   @id @default(cuid())
+  /// "debt" (kewajiban, kita yang berhutang) | "receivable" (piutang, orang lain berhutang ke kita)
+  type        String
+  personName  String
+  amount      Int
+  description String
+  /// ISO date YYYY-MM-DD, optional due date
+  dueDate     String?
+  isPaid      Boolean  @default(false)
+  /// ISO date YYYY-MM-DD when paid, optional
+  paidDate    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([type])
+  @@index([isPaid])
+}
+
+// =========================================================================
+// Tahap 3: WhatsApp — Template, Recipient, ScheduledReport, Log
+// =========================================================================
+
+/// Template pesan WhatsApp dengan variabel yang akan di-substitusi.
+/// Variabel yang didukung: {{bulan}}, {{saldo}}, {{pemasukan}}, {{pengeluaran}},
+/// {{arus_kas}}, {{top_kategori}}, {{tagihan_belum}}, {{utang}}, {{piutang}},
+/// {{tabungan}}, {{nama_keluarga}}.
+model WhatsAppTemplate {
+  id        String   @id @default(cuid())
+  name      String
+  /// Body pesan, boleh mengandung variabel {{...}}
+  body      String
+  /// "monthly" | "weekly" | "custom" — jenis laporan default
+  reportType String  @default("monthly")
+  isDefault Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  scheduledReports ScheduledReport[]
+}
+
+/// Penerima laporan WhatsApp (nama & nomor telepon, format 62...).
+model WhatsAppRecipient {
+  id        String   @id @default(cuid())
+  name      String
+  /// Nomor telepon format internasional tanpa "+", contoh: 6281234567890
+  phone     String
+  /// "spouse" | "self" | "family" | "other"
+  role      String   @default("spouse")
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Jadwal pengiriman laporan otomatis.
+/// Karena ini PWA tanpa backend cron, pengiriman dilakukan saat user membuka app
+/// dan ada jadwal yang sudah lewat "nextRunAt".
+model ScheduledReport {
+  id           String   @id @default(cuid())
+  name         String
+  /// "monthly" | "weekly"
+  frequency    String   @default("monthly")
+  /// Untuk monthly: tanggal (1-28) tiap bulan.
+  /// Untuk weekly: 0=Min, 1=Sen, ..., 6=Sab.
+  dayOfWeek    Int      @default(1)
+  /// Jam pengiriman (0-23)
+  hour         Int      @default(8)
+  /// Menit (0 atau 30)
+  minute       Int      @default(0)
+  /// ISO datetime kapan pengiriman berikutnya dijadwalkan (UTC)
+  nextRunAt    String
+  isActive     Boolean  @default(true)
+  templateId   String?
+  template     WhatsAppTemplate? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  /// Daftar penerima (pipe-separated recipient IDs)
+  recipientIds String   @default("")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  logs ScheduledReportLog[]
+}
+
+/// Riwayat pengiriman laporan terjadwal.
+model ScheduledReportLog {
+  id              String   @id @default(cuid())
+  scheduledReportId String
+  /// ISO datetime pengiriman
+  sentAt          String
+  /// Status: "sent" | "failed" | "skipped"
+  status          String   @default("sent")
+  /// Ringkasan pesan yang dikirim (untuk audit)
+  preview         String   @default("")
+  scheduledReport ScheduledReport @relation(fields: [scheduledReportId], references: [id], onDelete: Cascade)
+
+  @@index([scheduledReportId])
+}
+
+// =========================================================================
+// Tahap 4: Multi-anggota Keluarga & Notifikasi
+// =========================================================================
+
+/// Anggota keluarga dengan peran/hak akses.
+/// Peran:
+///   - "admin"  : akses penuh (CRUD semua, hapus, kelola anggota)
+///   - "editor" : tambah/edit transaksi, anggaran, tagihan (tidak bisa hapus/kelola anggota)
+///   - "viewer" : lihat saja (tidak bisa edit)
+model FamilyMember {
+  id          String   @id @default(cuid())
+  name        String
+  /// "admin" | "editor" | "viewer"
+  role        String   @default("editor")
+  /// Hex color for avatar background
+  color       String   @default("#10b981")
+  /// Optional avatar emoji or initial
+  avatar      String   @default("")
+  /// Apakah anggota ini sedang "aktif" (sedang menggunakan app)
+  isActive    Boolean  @default(true)
+  /// Apakah anggota ini adalah "current user" (untuk simulasi multi-device)
+  isCurrentUser Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  transactions Transaction[]
+  notifications Notification[]
+}
+
+/// Notifikasi in-app untuk pengingat dan peringatan.
+/// Type:
+///   - "bill_due"     : tagihan jatuh tempo / terlambat
+///   - "debt_overdue" : utang/piutang jatuh tempo lewat
+///   - "budget_over"  : anggaran melebihi batas
+///   - "schedule_due": jadwal WhatsApp jatuh tempo
+///   - "info"         : informasi umum
+model Notification {
+  id        String   @id @default(cuid())
+  /// "bill_due" | "debt_overdue" | "budget_over" | "schedule_due" | "info"
+  type      String
+  title     String
+  message   String
+  /// Hex color for icon
+  color     String   @default("#0ea5e9")
+  /// Optional action URL (relative path within app)
+  actionUrl String?
+  /// ISO datetime when notification was created
+  createdAt String
+  /// ISO datetime when notification was read (null = unread)
+  readAt    String?
+  /// Priority: "low" | "normal" | "high"
+  priority  String   @default("normal")
+  /// Target member (null = broadcast to all)
+  memberId  String?
+  member    FamilyMember? @relation(fields: [memberId], references: [id], onDelete: SetNull)
+
+  @@index([memberId])
+  @@index([readAt])
+  @@index([type])
+}
+
+// =========================================================================
+// Tahap 5: Analisis Lanjutan, Target, Backup, Scan Struk
+// =========================================================================
+
+/// Insight analisis keuangan otomatis (generated by /api/insights).
+/// Type:
+///   - "trend"      : tren pemasukan/pengeluaran bulanan
+///   - "health"     : skor kesehatan keuangan
+///   - "warning"    : peringatan (over-budget, spending spike)
+///   - "tip"        : rekomendasi/saran
+///   - "milestone"  : pencapaian (e.g. saving target tercapai)
+model FinancialInsight {
+  id          String   @id @default(cuid())
+  /// "trend" | "health" | "warning" | "tip" | "milestone"
+  type        String
+  title       String
+  description String
+  /// Hex color for icon
+  color       String   @default("#0ea5e9")
+  /// Numeric value associated with insight (e.g. health score, percentage)
+  value       Int?
+  /// Maximum value if value is a percentage/score
+  maxValue    Int?
+  /// ISO month this insight pertains to (YYYY-MM)
+  month       String
+  /// ISO datetime when insight was generated
+  createdAt   String
+  /// Whether user dismissed this insight
+  dismissedAt String?
+}
+
+/// Target perencanaan finansial jangka panjang.
+/// Type:
+///   - "debt_free"     : bebas utang
+///   - "emergency_fund" : dana darurat
+///   - "retirement"    : dana pensiun
+///   - "education"     : dana pendidikan
+///   - "home"          : KPR / rumah
+///   - "custom"        : target kustom
+model FinancialTarget {
+  id           String   @id @default(cuid())
+  name         String
+  type         String   @default("custom")
+  targetAmount Int
+  currentAmount Int     @default(0)
+  /// Target date ISO YYYY-MM-DD
+  targetDate   String?
+  /// Required monthly contribution to reach target
+  monthlyContribution Int?
+  color        String   @default("#10b981")
+  icon         String   @default("Target")
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Riwayat backup database (JSON export).
+model BackupRecord {
+  id          String   @id @default(cuid())
+  /// ISO datetime backup dibuat
+  createdAt   String
+  /// Filename suggestion
+  filename    String
+  /// Size in bytes
+  sizeBytes   Int
+  /// Number of records included
+  recordCount Int
+  /// "manual" | "auto"
+  trigger     String   @default("manual")
+  /// Optional notes
+  note        String?
+}
+
+/// Catatan scan struk (mock — simulasi OCR).
+model ReceiptScan {
+  id          String   @id @default(cuid())
+  /// ISO datetime scan dibuat
+  createdAt   String
+  /// Original filename of uploaded image
+  filename    String
+  /// Detected merchant name (mock)
+  merchant    String?
+  /// Detected total amount (mock)
+  totalAmount Int?
+  /// ISO date detected from receipt (mock)
+  date        String?
+  /// Detected category suggestion
+  suggestedCategory String?
+  /// Status: "pending" | "confirmed" | "rejected"
+  status      String   @default("pending")
+  /// Whether user confirmed and created transaction from this scan
+  transactionId String?
+}
