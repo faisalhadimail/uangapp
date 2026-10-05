@@ -15,6 +15,7 @@ import {
   Bell,
   Users,
   Sparkles,
+  Database,
 } from "lucide-react";
 import { formatRupiah } from "@/lib/format";
 import type { Summary } from "./types";
@@ -24,6 +25,7 @@ export type MoreView =
   | "family"
   | "notifications"
   | "tahap5"
+  | "database"
   | "savings"
   | "bills"
   | "debts"
@@ -119,6 +121,13 @@ export function MoreMenu({ summary, unreadNotifications = 0, memberCount = 0, on
       description: "Kelola kategori transaksi",
       icon: Tag,
       color: "#8b5cf6",
+    },
+    {
+      view: "database",
+      label: "Database",
+      description: "Backup, restore & hapus data",
+      icon: Database,
+      color: "#06b6d4",
     },
     {
       view: "accounts",

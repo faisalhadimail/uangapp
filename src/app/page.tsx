@@ -34,6 +34,7 @@ import { FamilySection } from "@/components/app/family-section";
 import { NotificationsBell } from "@/components/app/notifications-bell";
 import { NotificationsPage } from "@/components/app/notifications-page";
 import { Tahap5Section } from "@/components/app/tahap5-section";
+import { DatabaseManager } from "@/components/app/database-manager";
 import { LoginScreen } from "@/components/app/login-screen";
 import { AddTransactionSheet } from "@/components/app/add-transaction-sheet";
 import { AddCategorySheet } from "@/components/app/add-category-sheet";
@@ -394,6 +395,7 @@ export default function Home() {
         family: "Keluarga",
         notifications: "Notifikasi",
         tahap5: "Fitur Lanjutan",
+        database: "Database",
         savings: "Tabungan",
         bills: "Tagihan",
         debts: "Utang & Piutang",
@@ -479,6 +481,9 @@ export default function Home() {
             )}
             {tab === "more" && subView === "tahap5" && (
               <Tahap5Section />
+            )}
+            {tab === "more" && subView === "database" && (
+              <DatabaseManager onRefresh={loadSummary} />
             )}
             {tab === "more" && subView === "savings" && (
               <Savings
