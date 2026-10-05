@@ -1,0 +1,1164 @@
+{
+  "migratedAt": "2026-10-05T04:54:49.584Z",
+  "users": [
+    {
+      "id": "cmuuk4zca0000oit3sjwuk5ol",
+      "email": "admin@keluarga.id",
+      "name": "Admin Keluarga",
+      "passwordHash": "dd23761dc894ac4dc3d7e937d01a1fb5:ff35d3dc0123515a3c0b21c4a92922045b783fb0247a2511be41a0c2d7feefe9c7024ce9e8912f1513c49f4a231ab1032290d7011513b52ff08db80c45c47cd1",
+      "familyMemberId": null,
+      "createdAt": 1791162890218,
+      "updatedAt": 1791162890218
+    }
+  ],
+  "sessions": [
+    {
+      "id": "cmuuk541b0002oit3mq5wa4bf",
+      "token": "d5e8ba0268297f37d00e72d7ae970ebcb0b7f30c99cdce0d3eb3aa181135783e",
+      "userId": "cmuuk4zca0000oit3sjwuk5ol",
+      "expiresAt": "2026-10-12T01:14:56.303Z",
+      "createdAt": 1791162896304
+    },
+    {
+      "id": "cmuuru30m0009oit3fqc31hwf",
+      "token": "816a04dd0fdc675e2df7d4cd8861d6cf84188ad4d2e7efa54ace3d3aa13bd781",
+      "userId": "cmuuk4zca0000oit3sjwuk5ol",
+      "expiresAt": "2026-10-12T04:50:18.693Z",
+      "createdAt": 1791175818694
+    }
+  ],
+  "categories": [
+    {
+      "id": "cmutndzlr0004o8y1onn64k5j",
+      "name": "Gaji",
+      "type": "income",
+      "color": "#10b981",
+      "icon": "Wallet",
+      "createdAt": 1791107883135,
+      "updatedAt": 1791107883135
+    },
+    {
+      "id": "cmutndzlr0005o8y1n3qek93k",
+      "name": "Bonus",
+      "type": "income",
+      "color": "#14b8a6",
+      "icon": "Gift",
+      "createdAt": 1791107883136,
+      "updatedAt": 1791107883136
+    },
+    {
+      "id": "cmutndzls0006o8y1a05grjgg",
+      "name": "Uang Saku",
+      "type": "income",
+      "color": "#22c55e",
+      "icon": "Coins",
+      "createdAt": 1791107883136,
+      "updatedAt": 1791107883136
+    },
+    {
+      "id": "cmutndzls0007o8y1refjregs",
+      "name": "Freelance",
+      "type": "income",
+      "color": "#0ea5e9",
+      "icon": "Laptop",
+      "createdAt": 1791107883136,
+      "updatedAt": 1791107883136
+    },
+    {
+      "id": "cmutndzls0008o8y131s7luiz",
+      "name": "Investasi",
+      "type": "income",
+      "color": "#06b6d4",
+      "icon": "TrendingUp",
+      "createdAt": 1791107883137,
+      "updatedAt": 1791107883137
+    },
+    {
+      "id": "cmutndzls0009o8y1oa3cuh62",
+      "name": "Penjualan",
+      "type": "income",
+      "color": "#84cc16",
+      "icon": "ShoppingBag",
+      "createdAt": 1791107883137,
+      "updatedAt": 1791107883137
+    },
+    {
+      "id": "cmutndzls000ao8y1lu32775f",
+      "name": "Lainnya",
+      "type": "income",
+      "color": "#94a3b8",
+      "icon": "Plus",
+      "createdAt": 1791107883137,
+      "updatedAt": 1791107883137
+    },
+    {
+      "id": "cmutndzlu000bo8y1yzvr64eg",
+      "name": "Makan & Minum",
+      "type": "expense",
+      "color": "#f97316",
+      "icon": "UtensilsCrossed",
+      "createdAt": 1791107883139,
+      "updatedAt": 1791107883139
+    },
+    {
+      "id": "cmutndzlu000co8y186i42oy0",
+      "name": "Belanja Bulanan",
+      "type": "expense",
+      "color": "#eab308",
+      "icon": "ShoppingCart",
+      "createdAt": 1791107883139,
+      "updatedAt": 1791107883139
+    },
+    {
+      "id": "cmutndzlv000do8y1g2qzcobv",
+      "name": "Transportasi",
+      "type": "expense",
+      "color": "#3b82f6",
+      "icon": "Car",
+      "createdAt": 1791107883139,
+      "updatedAt": 1791107883139
+    },
+    {
+      "id": "cmutndzlv000eo8y114bcggtw",
+      "name": "Listrik & Air",
+      "type": "expense",
+      "color": "#facc15",
+      "icon": "Zap",
+      "createdAt": 1791107883139,
+      "updatedAt": 1791107883139
+    },
+    {
+      "id": "cmutndzlv000fo8y1ts874cjk",
+      "name": "Internet & HP",
+      "type": "expense",
+      "color": "#06b6d4",
+      "icon": "Wifi",
+      "createdAt": 1791107883140,
+      "updatedAt": 1791107883140
+    },
+    {
+      "id": "cmutndzlv000go8y1t79ymloh",
+      "name": "Sekolah Anak",
+      "type": "expense",
+      "color": "#8b5cf6",
+      "icon": "GraduationCap",
+      "createdAt": 1791107883140,
+      "updatedAt": 1791107883140
+    },
+    {
+      "id": "cmutndzlw000ho8y1rtn8iet0",
+      "name": "Kesehatan",
+      "type": "expense",
+      "color": "#ec4899",
+      "icon": "HeartPulse",
+      "createdAt": 1791107883140,
+      "updatedAt": 1791107883140
+    },
+    {
+      "id": "cmutndzlw000io8y1yi4xsvif",
+      "name": "Cicilan",
+      "type": "expense",
+      "color": "#ef4444",
+      "icon": "CreditCard",
+      "createdAt": 1791107883140,
+      "updatedAt": 1791107883140
+    },
+    {
+      "id": "cmutndzlw000jo8y1uyr33oe0",
+      "name": "Hiburan",
+      "type": "expense",
+      "color": "#a855f7",
+      "icon": "Tv",
+      "createdAt": 1791107883140,
+      "updatedAt": 1791107883140
+    },
+    {
+      "id": "cmutndzlw000ko8y19gf2qbpf",
+      "name": "Lainnya",
+      "type": "expense",
+      "color": "#94a3b8",
+      "icon": "Receipt",
+      "createdAt": 1791107883141,
+      "updatedAt": 1791107883141
+    },
+    {
+      "id": "cmutndzlw000lo8y1rsplf41b",
+      "name": "Donasi",
+      "type": "expense",
+      "color": "#10b981",
+      "icon": "HandHeart",
+      "createdAt": 1791107883141,
+      "updatedAt": 1791107883141
+    }
+  ],
+  "accounts": [
+    {
+      "id": "cmutndzlm0000o8y1378vzhw5",
+      "name": "Bank BCA",
+      "type": "bank",
+      "initialBalance": 5000000,
+      "createdAt": 1791107883130,
+      "updatedAt": 1791107883130
+    },
+    {
+      "id": "cmutndzln0001o8y185dyqqzr",
+      "name": "Bank Mandiri",
+      "type": "bank",
+      "initialBalance": 12000000,
+      "createdAt": 1791107883131,
+      "updatedAt": 1791107883131
+    },
+    {
+      "id": "cmutndzln0002o8y1cr2zrjlo",
+      "name": "GoPay",
+      "type": "ewallet",
+      "initialBalance": 250000,
+      "createdAt": 1791107883132,
+      "updatedAt": 1791107883132
+    },
+    {
+      "id": "cmutndzlo0003o8y1prqft9ux",
+      "name": "Dompet Tunai",
+      "type": "cash",
+      "initialBalance": 500000,
+      "createdAt": 1791107883132,
+      "updatedAt": 1791107883132
+    }
+  ],
+  "transactions": [
+    {
+      "id": "cmutndzly000no8y198hwopex",
+      "type": "income",
+      "amount": 12500000,
+      "description": "Gaji bulanan",
+      "date": "2026-10-01",
+      "createdAt": 1791107883142,
+      "updatedAt": 1791120215989,
+      "categoryId": "cmutndzlr0004o8y1onn64k5j",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzlz000po8y1cwbkgjpd",
+      "type": "income",
+      "amount": 8000000,
+      "description": "Gaji istri",
+      "date": "2026-10-01",
+      "createdAt": 1791107883143,
+      "updatedAt": 1791120215990,
+      "categoryId": "cmutndzlr0004o8y1onn64k5j",
+      "accountId": "cmutndzln0001o8y185dyqqzr",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzm3000ro8y1cwfc3c7i",
+      "type": "expense",
+      "amount": 1850000,
+      "description": "Belanja bulanan Indomaret",
+      "date": "2026-10-02",
+      "createdAt": 1791107883147,
+      "updatedAt": 1791120215991,
+      "categoryId": "cmutndzlu000co8y186i42oy0",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzm4000to8y1rxtl78j6",
+      "type": "expense",
+      "amount": 25000,
+      "description": "Sarapan bubur ayam",
+      "date": "2026-10-02",
+      "createdAt": 1791107883149,
+      "updatedAt": 1791120215993,
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "accountId": "cmutndzlo0003o8y1prqft9ux",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzm5000vo8y1vok8wivd",
+      "type": "expense",
+      "amount": 18000,
+      "description": "Ojek online ke kantor",
+      "date": "2026-10-03",
+      "createdAt": 1791107883150,
+      "updatedAt": 1791120215993,
+      "categoryId": "cmutndzlv000do8y1g2qzcobv",
+      "accountId": "cmutndzln0002o8y1cr2zrjlo",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzm6000xo8y17rwj5tbm",
+      "type": "expense",
+      "amount": 45000,
+      "description": "Makan siang warteg",
+      "date": "2026-10-03",
+      "createdAt": 1791107883151,
+      "updatedAt": 1791120215994,
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "accountId": "cmutndzlo0003o8y1prqft9ux",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzm7000zo8y16aroq864",
+      "type": "expense",
+      "amount": 425000,
+      "description": "Tagihan listrik PLN",
+      "date": "2026-10-04",
+      "createdAt": 1791107883151,
+      "updatedAt": 1791120215995,
+      "categoryId": "cmutndzlv000eo8y114bcggtw",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzm80011o8y1gvrcanyw",
+      "type": "expense",
+      "amount": 350000,
+      "description": "Paket internet IndiHome",
+      "date": "2026-10-04",
+      "createdAt": 1791107883152,
+      "updatedAt": 1791120215997,
+      "categoryId": "cmutndzlv000fo8y1ts874cjk",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzm90013o8y171plxc7m",
+      "type": "expense",
+      "amount": 22000,
+      "description": "Sarapan nasi uduk",
+      "date": "2026-10-04",
+      "createdAt": 1791107883153,
+      "updatedAt": 1791120215997,
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "accountId": "cmutndzlo0003o8y1prqft9ux",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzm90015o8y1dlutw9hh",
+      "type": "expense",
+      "amount": 15000,
+      "description": "GoPay ke kantor",
+      "date": "2026-10-04",
+      "createdAt": 1791107883154,
+      "updatedAt": 1791120215998,
+      "categoryId": "cmutndzlv000do8y1g2qzcobv",
+      "accountId": "cmutndzln0002o8y1cr2zrjlo",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzma0017o8y1te9la35a",
+      "type": "expense",
+      "amount": 38000,
+      "description": "Makan siang",
+      "date": "2026-10-04",
+      "createdAt": 1791107883155,
+      "updatedAt": 1791120216000,
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "accountId": "cmutndzlo0003o8y1prqft9ux",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzmb0019o8y11148fd37",
+      "type": "income",
+      "amount": 12500000,
+      "description": "Gaji bulan lalu",
+      "date": "2026-09-01",
+      "createdAt": 1791107883156,
+      "updatedAt": 1791120216001,
+      "categoryId": "cmutndzlr0004o8y1onn64k5j",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzmc001bo8y1b84girf7",
+      "type": "income",
+      "amount": 8000000,
+      "description": "Gaji istri bulan lalu",
+      "date": "2026-09-01",
+      "createdAt": 1791107883156,
+      "updatedAt": 1791120216002,
+      "categoryId": "cmutndzlr0004o8y1onn64k5j",
+      "accountId": "cmutndzln0001o8y185dyqqzr",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzmd001do8y1v74dxo0f",
+      "type": "expense",
+      "amount": 1920000,
+      "description": "Belanja bulan lalu",
+      "date": "2026-09-03",
+      "createdAt": 1791107883157,
+      "updatedAt": 1791120216003,
+      "categoryId": "cmutndzlu000co8y186i42oy0",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzmd001fo8y1b1tnw4ko",
+      "type": "expense",
+      "amount": 410000,
+      "description": "Listrik bulan lalu",
+      "date": "2026-09-04",
+      "createdAt": 1791107883158,
+      "updatedAt": 1791120216004,
+      "categoryId": "cmutndzlv000eo8y114bcggtw",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzme001ho8y1ynyh3bh6",
+      "type": "expense",
+      "amount": 350000,
+      "description": "Internet bulan lalu",
+      "date": "2026-09-04",
+      "createdAt": 1791107883159,
+      "updatedAt": 1791120216005,
+      "categoryId": "cmutndzlv000fo8y1ts874cjk",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutndzmh001jo8y1pnlpuvrx",
+      "type": "expense",
+      "amount": 2450000,
+      "description": "Cicilan KPR bulan lalu",
+      "date": "2026-09-14",
+      "createdAt": 1791107883161,
+      "updatedAt": 1791120216006,
+      "categoryId": "cmutndzlw000io8y1yi4xsvif",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmutndzmi001lo8y1ctntecs2",
+      "type": "expense",
+      "amount": 720000,
+      "description": "Cicilan motor bulan lalu",
+      "date": "2026-09-14",
+      "createdAt": 1791107883162,
+      "updatedAt": 1791120216008,
+      "categoryId": "cmutndzlw000io8y1yi4xsvif",
+      "accountId": "cmutndzln0001o8y185dyqqzr",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0001o8ddath7c1oe"
+    },
+    {
+      "id": "cmutnjll0001no8y106ubdsgc",
+      "type": "expense",
+      "amount": 50000,
+      "description": "Belanja kopi siang",
+      "date": "2026-10-04",
+      "createdAt": 1791108144900,
+      "updatedAt": 1791120216009,
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    },
+    {
+      "id": "cmuuigeai0008oi4q1f593g1h",
+      "type": "expense",
+      "amount": 75000,
+      "description": "Test transaksi dari cek fitur",
+      "date": "2026-10-05",
+      "createdAt": 1791160063579,
+      "updatedAt": 1791160063579,
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "accountId": "cmutndzlm0000o8y1378vzhw5",
+      "toAccountId": null,
+      "memberId": "cmutuqbox0000o8dd0xalnlxk"
+    }
+  ],
+  "budgets": [
+    {
+      "id": "cmutqzkum0001o8fwvy7q6d1j",
+      "categoryId": "cmutndzlu000bo8y1yzvr64eg",
+      "amount": 1500000,
+      "createdAt": 1791113929295,
+      "updatedAt": 1791113929295
+    },
+    {
+      "id": "cmutqzkun0003o8fwmz53pxwp",
+      "categoryId": "cmutndzlu000co8y186i42oy0",
+      "amount": 2000000,
+      "createdAt": 1791113929296,
+      "updatedAt": 1791113929296
+    },
+    {
+      "id": "cmutqzkuo0005o8fwdh59seu7",
+      "categoryId": "cmutndzlv000do8y1g2qzcobv",
+      "amount": 950000,
+      "createdAt": 1791113929297,
+      "updatedAt": 1791121370774
+    },
+    {
+      "id": "cmutqzkup0007o8fwvsrknnoo",
+      "categoryId": "cmutndzlv000eo8y114bcggtw",
+      "amount": 500000,
+      "createdAt": 1791113929298,
+      "updatedAt": 1791113929298
+    },
+    {
+      "id": "cmutqzkuq0009o8fwsyud2erj",
+      "categoryId": "cmutndzlv000fo8y1ts874cjk",
+      "amount": 500000,
+      "createdAt": 1791113929298,
+      "updatedAt": 1791113929298
+    },
+    {
+      "id": "cmutqzkus000bo8fwy4jezpun",
+      "categoryId": "cmutndzlw000jo8y1uyr33oe0",
+      "amount": 400000,
+      "createdAt": 1791113929300,
+      "updatedAt": 1791113929300
+    },
+    {
+      "id": "cmutqzkus000do8fwisrjvm32",
+      "categoryId": "cmutndzlv000go8y1t79ymloh",
+      "amount": 1000000,
+      "createdAt": 1791113929301,
+      "updatedAt": 1791113929301
+    },
+    {
+      "id": "cmutqzkut000fo8fwvic7gymq",
+      "categoryId": "cmutndzlw000ho8y1rtn8iet0",
+      "amount": 500000,
+      "createdAt": 1791113929302,
+      "updatedAt": 1791113929302
+    }
+  ],
+  "savings": [
+    {
+      "id": "cmutqzkuu000go8fwgfz9cjqo",
+      "name": "Dana Darurat",
+      "type": "emergency",
+      "targetAmount": 30000000,
+      "currentAmount": 12500000,
+      "targetDate": null,
+      "color": "#ef4444",
+      "icon": "ShieldCheck",
+      "createdAt": 1791113929303,
+      "updatedAt": 1791113929303
+    },
+    {
+      "id": "cmutqzkuv000ho8fwpx517rdx",
+      "name": "Liburan Akhir Tahun",
+      "type": "goal",
+      "targetAmount": 15000000,
+      "currentAmount": 4200000,
+      "targetDate": "2027-01-04",
+      "color": "#0ea5e9",
+      "icon": "Plane",
+      "createdAt": 1791113929304,
+      "updatedAt": 1791113929304
+    },
+    {
+      "id": "cmutqzkuw000io8fw1oq43or0",
+      "name": "DP Mobil",
+      "type": "goal",
+      "targetAmount": 50000000,
+      "currentAmount": 18750000,
+      "targetDate": "2027-10-04",
+      "color": "#8b5cf6",
+      "icon": "Car",
+      "createdAt": 1791113929305,
+      "updatedAt": 1791113929305
+    },
+    {
+      "id": "cmutqzkux000jo8fwfckodo1c",
+      "name": "Biaya Pendidikan Anak",
+      "type": "goal",
+      "targetAmount": 25000000,
+      "currentAmount": 9800000,
+      "targetDate": "2027-04-04",
+      "color": "#10b981",
+      "icon": "GraduationCap",
+      "createdAt": 1791113929306,
+      "updatedAt": 1791113929306
+    },
+    {
+      "id": "cmutqzkuy000ko8fwnm2gbbga",
+      "name": "Renovasi Dapur",
+      "type": "goal",
+      "targetAmount": 8000000,
+      "currentAmount": 2500000,
+      "targetDate": "2027-02-04",
+      "color": "#f97316",
+      "icon": "Home",
+      "createdAt": 1791113929306,
+      "updatedAt": 1791113929306
+    }
+  ],
+  "bills": [
+    {
+      "id": "cmutqzkv0000lo8fwng97q8g5",
+      "name": "Cicilan KPR",
+      "amount": 2450000,
+      "dueDay": 14,
+      "recurrence": "monthly",
+      "color": "#ef4444",
+      "icon": "Home",
+      "isActive": 1,
+      "createdAt": 1791113929309,
+      "updatedAt": 1791113929309
+    },
+    {
+      "id": "cmutqzkv2000mo8fw8j1whwdp",
+      "name": "Cicilan Motor",
+      "amount": 680000,
+      "dueDay": 14,
+      "recurrence": "monthly",
+      "color": "#ef4444",
+      "icon": "Car",
+      "isActive": 1,
+      "createdAt": 1791113929310,
+      "updatedAt": 1791113929310
+    },
+    {
+      "id": "cmutqzkv3000no8fwdhmc9jgd",
+      "name": "Listrik PLN",
+      "amount": 425000,
+      "dueDay": 10,
+      "recurrence": "monthly",
+      "color": "#facc15",
+      "icon": "Zap",
+      "isActive": 1,
+      "createdAt": 1791113929311,
+      "updatedAt": 1791113929311
+    },
+    {
+      "id": "cmutqzkv4000oo8fwu6e0s9d0",
+      "name": "Internet IndiHome",
+      "amount": 350000,
+      "dueDay": 5,
+      "recurrence": "monthly",
+      "color": "#06b6d4",
+      "icon": "Wifi",
+      "isActive": 1,
+      "createdAt": 1791113929312,
+      "updatedAt": 1791113929312
+    },
+    {
+      "id": "cmutqzkv5000po8fwrxe208fa",
+      "name": "PDAM Air",
+      "amount": 180000,
+      "dueDay": 8,
+      "recurrence": "monthly",
+      "color": "#0ea5e9",
+      "icon": "Droplets",
+      "isActive": 1,
+      "createdAt": 1791113929313,
+      "updatedAt": 1791113929313
+    },
+    {
+      "id": "cmutqzkv6000qo8fw9lbhf11f",
+      "name": "Netflix",
+      "amount": 65000,
+      "dueDay": 20,
+      "recurrence": "monthly",
+      "color": "#a855f7",
+      "icon": "Tv",
+      "isActive": 1,
+      "createdAt": 1791113929314,
+      "updatedAt": 1791113929314
+    },
+    {
+      "id": "cmutqzkv7000ro8fwqbvrxf2c",
+      "name": "Spotify Family",
+      "amount": 90000,
+      "dueDay": 22,
+      "recurrence": "monthly",
+      "color": "#22c55e",
+      "icon": "Music",
+      "isActive": 1,
+      "createdAt": 1791113929315,
+      "updatedAt": 1791113929315
+    },
+    {
+      "id": "cmutqzkv8000so8fwp06h6zv9",
+      "name": "Asuransi Kesehatan",
+      "amount": 450000,
+      "dueDay": 25,
+      "recurrence": "monthly",
+      "color": "#ec4899",
+      "icon": "HeartPulse",
+      "isActive": 1,
+      "createdAt": 1791113929316,
+      "updatedAt": 1791113929316
+    },
+    {
+      "id": "cmutqzkv9000to8fwl5h0t0c8",
+      "name": "BPJS Kesehatan",
+      "amount": 150000,
+      "dueDay": 28,
+      "recurrence": "monthly",
+      "color": "#3b82f6",
+      "icon": "ShieldPlus",
+      "isActive": 1,
+      "createdAt": 1791113929317,
+      "updatedAt": 1791113929317
+    }
+  ],
+  "paidBills": [
+    {
+      "id": "cmuuik8ks000aoi4q2xgga9x9",
+      "billId": "cmutqzkv4000oo8fwu6e0s9d0",
+      "month": "2026-10",
+      "paidAt": 1791160242797
+    }
+  ],
+  "debts": [
+    {
+      "id": "cmutqzkva000uo8fwtw7crhvb",
+      "type": "debt",
+      "personName": "Bank BCA (Kartu Kredit)",
+      "amount": 3500000,
+      "description": "Tagihan kartu kredit bulan lalu",
+      "dueDate": "2026-10-04",
+      "isPaid": 1,
+      "paidDate": "2026-10-04",
+      "createdAt": 1791113929318,
+      "updatedAt": 1791114107495
+    },
+    {
+      "id": "cmutqzkvb000vo8fw0t0yxgsi",
+      "type": "debt",
+      "personName": "Budi (Teman Kantor)",
+      "amount": 500000,
+      "description": "Pinjaman untuk acara kantor",
+      "dueDate": "2026-11-04",
+      "isPaid": 0,
+      "paidDate": null,
+      "createdAt": 1791113929319,
+      "updatedAt": 1791113929319
+    },
+    {
+      "id": "cmutqzkvc000wo8fwf0uuoja6",
+      "type": "debt",
+      "personName": "Ibu Sari",
+      "amount": 1200000,
+      "description": "Utang arisan",
+      "dueDate": "2026-12-04",
+      "isPaid": 0,
+      "paidDate": null,
+      "createdAt": 1791113929320,
+      "updatedAt": 1791113929320
+    },
+    {
+      "id": "cmutqzkvd000xo8fw2uqoai89",
+      "type": "debt",
+      "personName": "Toko Elektronik Jaya",
+      "amount": 2000000,
+      "description": "Cicilan kulkas (sisa 2x)",
+      "dueDate": "2026-10-04",
+      "isPaid": 0,
+      "paidDate": null,
+      "createdAt": 1791113929321,
+      "updatedAt": 1791113929321
+    },
+    {
+      "id": "cmutqzkve000yo8fwzzzmsasq",
+      "type": "receivable",
+      "personName": "Andi (Adik)",
+      "amount": 1500000,
+      "description": "Bantu ongkos pindah",
+      "dueDate": "2026-11-04",
+      "isPaid": 0,
+      "paidDate": null,
+      "createdAt": 1791113929322,
+      "updatedAt": 1791113929322
+    },
+    {
+      "id": "cmutqzkvf000zo8fwvymmu0ui",
+      "type": "receivable",
+      "personName": "Sinta (Mertua)",
+      "amount": 2000000,
+      "description": "Beli obat bulan lalu",
+      "dueDate": "2026-10-04",
+      "isPaid": 0,
+      "paidDate": null,
+      "createdAt": 1791113929323,
+      "updatedAt": 1791113929323
+    },
+    {
+      "id": "cmutqzkvf0010o8fwx1778693",
+      "type": "receivable",
+      "personName": "Pak Joko (Tetangga)",
+      "amount": 250000,
+      "description": "Beli pulsa",
+      "dueDate": null,
+      "isPaid": 1,
+      "paidDate": "2026-10-04",
+      "createdAt": 1791113929324,
+      "updatedAt": 1791113929324
+    }
+  ],
+  "whatsAppTemplates": [
+    {
+      "id": "cmutsttxe0000o823au0la0s7",
+      "name": "Laporan Bulanan Lengkap",
+      "body": "*Laporan Keuangan {{nama_keluarga}}*\n\n*Bulan:* {{bulan}}\n\n*Ringkasan:*\n• Saldo: {{saldo}}\n• Pemasukan: {{pemasukan}}\n• Pengeluaran: {{pengeluaran}}\n• Arus Kas: {{arus_kas}}\n\n*Pengeluaran Terbesar:*\n{{top_kategori}}\n\n*Status:*\n• Tagihan belum dibayar: {{tagihan_belum}}\n• Utang aktif: {{utang}}\n• Piutang aktif: {{piutang}}\n• Tabungan terkumpul: {{tabungan}}\n\n_Dikirim otomatis dari Catatan Keuangan Keluarga_",
+      "reportType": "monthly",
+      "isDefault": 1,
+      "createdAt": 1791117020355,
+      "updatedAt": 1791117020355
+    },
+    {
+      "id": "cmutsttxg0001o823ln96et2b",
+      "name": "Update Mingguan Singkat",
+      "body": "*Update Mingguan {{nama_keluarga}}*\n\nPer {{bulan}}:\n• Saldo: {{saldo}}\n• Pemasukan: {{pemasukan}}\n• Pengeluaran: {{pengeluaran}}\n• Arus Kas: {{arus_kas}}\n\nTop pengeluaran:\n{{top_kategori}}\n\n_Dari Catatan Keuangan Keluarga_",
+      "reportType": "weekly",
+      "isDefault": 0,
+      "createdAt": 1791117020357,
+      "updatedAt": 1791117020357
+    },
+    {
+      "id": "cmutsttxh0002o823fxczk2ds",
+      "name": "Pengingat Tagihan",
+      "body": "*Pengingat Tagihan {{nama_keluarga}}*\n\nBulan: {{bulan}}\n\nSaat ini ada:\n{{tagihan_belum}}\n\nSaldo tersedia: {{saldo}}\n\n_Segera lakukan pembayaran ya!_",
+      "reportType": "custom",
+      "isDefault": 0,
+      "createdAt": 1791117020358,
+      "updatedAt": 1791117020358
+    }
+  ],
+  "whatsAppRecipients": [
+    {
+      "id": "cmutsttxi0003o82321ua5t5w",
+      "name": "Diri Sendiri",
+      "phone": "6281298765432",
+      "role": "self",
+      "isActive": 1,
+      "createdAt": 1791117020359,
+      "updatedAt": 1791117020359
+    },
+    {
+      "id": "cmutsttxj0004o823lwhdj7oc",
+      "name": "Bunda (Ibu)",
+      "phone": "6281112223334",
+      "role": "family",
+      "isActive": 1,
+      "createdAt": 1791117020359,
+      "updatedAt": 1791117020359
+    },
+    {
+      "id": "cmutsttxj0005o82385j58k4j",
+      "name": "Istri (Dewi)",
+      "phone": "6281234567890",
+      "role": "spouse",
+      "isActive": 1,
+      "createdAt": 1791117020359,
+      "updatedAt": 1791117020359
+    }
+  ],
+  "scheduledReports": [
+    {
+      "id": "cmutsttxm0007o8231vejykpj",
+      "name": "Laporan Bulanan Otomatis",
+      "frequency": "monthly",
+      "dayOfWeek": 1,
+      "hour": 8,
+      "minute": 0,
+      "nextRunAt": "2026-11-01T08:00:00.000Z",
+      "isActive": 1,
+      "templateId": "cmutsttxe0000o823au0la0s7",
+      "recipientIds": "cmutsttxj0005o82385j58k4j|cmutsttxi0003o82321ua5t5w|cmutsttxj0004o823lwhdj7oc",
+      "createdAt": 1791117020363,
+      "updatedAt": 1791117020363
+    },
+    {
+      "id": "cmutsttxn0009o82314da2oqc",
+      "name": "Update Mingguan Senin Malam",
+      "frequency": "weekly",
+      "dayOfWeek": 1,
+      "hour": 19,
+      "minute": 0,
+      "nextRunAt": "2026-10-05T19:00:00.000Z",
+      "isActive": 1,
+      "templateId": "cmutsttxg0001o823ln96et2b",
+      "recipientIds": "cmutsttxj0005o82385j58k4j|cmutsttxi0003o82321ua5t5w",
+      "createdAt": 1791117020364,
+      "updatedAt": 1791117020364
+    },
+    {
+      "id": "cmutsttxo000bo823sqd5bgi4",
+      "name": "Pengingat Tagihan (nonaktif)",
+      "frequency": "monthly",
+      "dayOfWeek": 25,
+      "hour": 9,
+      "minute": 0,
+      "nextRunAt": "2026-10-25T09:00:00.000Z",
+      "isActive": 0,
+      "templateId": null,
+      "recipientIds": "cmutsttxj0005o82385j58k4j",
+      "createdAt": 1791117020365,
+      "updatedAt": 1791117020365
+    }
+  ],
+  "scheduledReportLogs": [],
+  "familyMembers": [
+    {
+      "id": "cmutuqbox0001o8ddath7c1oe",
+      "name": "Dewi (Istri)",
+      "role": "admin",
+      "color": "#ec4899",
+      "avatar": "D",
+      "isActive": 1,
+      "isCurrentUser": 0,
+      "createdAt": 1791120215986,
+      "updatedAt": 1791159876537
+    },
+    {
+      "id": "cmutuqboy0002o8ddnzv47d53",
+      "name": "Rara (Anak)",
+      "role": "viewer",
+      "color": "#f59e0b",
+      "avatar": "R",
+      "isActive": 1,
+      "isCurrentUser": 0,
+      "createdAt": 1791120215987,
+      "updatedAt": 1791120215987
+    },
+    {
+      "id": "cmutuqbox0000o8dd0xalnlxk",
+      "name": "Budi (Suami)",
+      "role": "admin",
+      "color": "#0ea5e9",
+      "avatar": "B",
+      "isActive": 1,
+      "isCurrentUser": 1,
+      "createdAt": 1791120215986,
+      "updatedAt": 1791159876539
+    }
+  ],
+  "notifications": [
+    {
+      "id": "cmutuqbu50003o8dd5u2jtpsx",
+      "type": "bill_due",
+      "title": "Tagihan jatuh tempo: Internet IndiHome",
+      "message": "Tagihan Internet IndiHome (Rp 350.000) jatuh tempo dalam 1 hari (tanggal 5). Siapkan dana pembayaran.",
+      "color": "#f59e0b",
+      "actionUrl": "more:bill",
+      "createdAt": "2026-10-04T13:23:36.158Z",
+      "readAt": "2026-10-05T00:22:59.708Z",
+      "priority": "normal",
+      "memberId": null
+    },
+    {
+      "id": "cmutuqbu50004o8ddhmlcpt99",
+      "type": "debt_overdue",
+      "title": "Jatuh tempo 0 hari: Toko Elektronik Jaya",
+      "message": "Utang ke Toko Elektronik Jaya sebesar Rp 2.000.000 jatuh tempo dalam 0 hari (2026-10-04).",
+      "color": "#f59e0b",
+      "actionUrl": "more:debt",
+      "createdAt": "2026-10-04T13:23:36.158Z",
+      "readAt": "2026-10-05T00:22:59.708Z",
+      "priority": "normal",
+      "memberId": null
+    },
+    {
+      "id": "cmutuqbu50005o8ddoykvmk1u",
+      "type": "debt_overdue",
+      "title": "Jatuh tempo 0 hari: Sinta (Mertua)",
+      "message": "Piutang dari Sinta (Mertua) sebesar Rp 2.000.000 jatuh tempo dalam 0 hari (2026-10-04).",
+      "color": "#f59e0b",
+      "actionUrl": "more:debt",
+      "createdAt": "2026-10-04T13:23:36.158Z",
+      "readAt": "2026-10-05T00:22:59.708Z",
+      "priority": "normal",
+      "memberId": null
+    },
+    {
+      "id": "cmutuqbu50006o8dd841hq8o8",
+      "type": "budget_over",
+      "title": "Anggaran mendekati batas: Belanja Bulanan",
+      "message": "Pengeluaran Belanja Bulanan sudah 93% dari anggaran (Rp 1.850.000 dari Rp 2.000.000). Hati-hati, hampir mencapai batas.",
+      "color": "#f59e0b",
+      "actionUrl": "budgets",
+      "createdAt": "2026-10-04T13:23:36.158Z",
+      "readAt": "2026-10-05T00:22:59.708Z",
+      "priority": "normal",
+      "memberId": null
+    },
+    {
+      "id": "cmutuqbu50007o8ddbk52z81r",
+      "type": "budget_over",
+      "title": "Anggaran mendekati batas: Listrik & Air",
+      "message": "Pengeluaran Listrik & Air sudah 85% dari anggaran (Rp 425.000 dari Rp 500.000). Hati-hati, hampir mencapai batas.",
+      "color": "#f59e0b",
+      "actionUrl": "budgets",
+      "createdAt": "2026-10-04T13:23:36.158Z",
+      "readAt": "2026-10-05T00:22:59.708Z",
+      "priority": "normal",
+      "memberId": null
+    },
+    {
+      "id": "cmuuilggc000boi4qsv8z1fyp",
+      "type": "bill_due",
+      "title": "Tagihan jatuh tempo: PDAM Air",
+      "message": "Tagihan PDAM Air (Rp 180.000) jatuh tempo dalam 3 hari (tanggal 8). Siapkan dana pembayaran.",
+      "color": "#f59e0b",
+      "actionUrl": "more:bill",
+      "createdAt": "2026-10-05T00:31:39.651Z",
+      "readAt": null,
+      "priority": "normal",
+      "memberId": null
+    },
+    {
+      "id": "cmuuilggd000coi4qta34kzap",
+      "type": "debt_overdue",
+      "title": "Utang terlambat: Toko Elektronik Jaya",
+      "message": "Utang ke Toko Elektronik Jaya sebesar Rp 2.000.000 (Cicilan kulkas (sisa 2x)) jatuh tempo 2026-10-04 dan sudah lewat 1 hari.",
+      "color": "#ef4444",
+      "actionUrl": "more:debt",
+      "createdAt": "2026-10-05T00:31:39.651Z",
+      "readAt": null,
+      "priority": "high",
+      "memberId": null
+    },
+    {
+      "id": "cmuuilggd000doi4qrfnmkl2f",
+      "type": "debt_overdue",
+      "title": "Piutang terlambat: Sinta (Mertua)",
+      "message": "Piutang dari Sinta (Mertua) sebesar Rp 2.000.000 (Beli obat bulan lalu) jatuh tempo 2026-10-04 dan sudah lewat 1 hari.",
+      "color": "#ef4444",
+      "actionUrl": "more:debt",
+      "createdAt": "2026-10-05T00:31:39.651Z",
+      "readAt": null,
+      "priority": "high",
+      "memberId": null
+    }
+  ],
+  "financialInsights": [],
+  "financialTargets": [
+    {
+      "id": "cmuuhcbfd0000oi4qkorotedl",
+      "name": "Bebas Utang Kartu Kredit",
+      "type": "debt_free",
+      "targetAmount": 3500000,
+      "currentAmount": 0,
+      "targetDate": "2027-01-04",
+      "monthlyContribution": 1200000,
+      "color": "#ef4444",
+      "icon": "CreditCard",
+      "isActive": 1,
+      "createdAt": 1791158193626,
+      "updatedAt": 1791158193626
+    },
+    {
+      "id": "cmuuhcbff0001oi4qnkmnla4a",
+      "name": "Dana Darurat 6 Bulan",
+      "type": "emergency_fund",
+      "targetAmount": 30000000,
+      "currentAmount": 12500000,
+      "targetDate": "2028-04-04",
+      "monthlyContribution": 1000000,
+      "color": "#f59e0b",
+      "icon": "ShieldCheck",
+      "isActive": 1,
+      "createdAt": 1791158193627,
+      "updatedAt": 1791158193627
+    },
+    {
+      "id": "cmuuhcbfg0002oi4q4rcn95tl",
+      "name": "Dana Pendidikan Anak SMP",
+      "type": "education",
+      "targetAmount": 50000000,
+      "currentAmount": 9800000,
+      "targetDate": "2029-10-04",
+      "monthlyContribution": 1200000,
+      "color": "#8b5cf6",
+      "icon": "GraduationCap",
+      "isActive": 1,
+      "createdAt": 1791158193628,
+      "updatedAt": 1791158193628
+    },
+    {
+      "id": "cmuuhcbfh0003oi4qwljjcc6s",
+      "name": "Dana Pensiun Dini",
+      "type": "retirement",
+      "targetAmount": 500000000,
+      "currentAmount": 47750000,
+      "targetDate": "2041-10-04",
+      "monthlyContribution": 3000000,
+      "color": "#10b981",
+      "icon": "PiggyBank",
+      "isActive": 1,
+      "createdAt": 1791158193629,
+      "updatedAt": 1791158193629
+    }
+  ],
+  "backupRecords": [
+    {
+      "id": "cmuuhlkam0005oi4qkyf3bobv",
+      "createdAt": "2026-10-05T00:03:45.021Z",
+      "filename": "keuangan-keluarga-backup-2026-10-05-00-03-45.json",
+      "sizeBytes": 31722,
+      "recordCount": 73,
+      "trigger": "manual",
+      "note": null
+    },
+    {
+      "id": "cmuuilkog000eoi4qb8t63zmd",
+      "createdAt": "2026-10-05T00:31:45.136Z",
+      "filename": "keuangan-keluarga-backup-2026-10-05-00-31-45.json",
+      "sizeBytes": 33784,
+      "recordCount": 74,
+      "trigger": "manual",
+      "note": null
+    }
+  ],
+  "receiptScans": [
+    {
+      "id": "cmuuhkugx0004oi4qzuhbpdn7",
+      "createdAt": "2026-10-05T00:03:11.552Z",
+      "filename": "struk-2026-10-05-00-03-10.jpg",
+      "merchant": "Alfamart",
+      "totalAmount": 180000,
+      "date": "2026-10-05",
+      "suggestedCategory": "cmutndzlu000co8y186i42oy0",
+      "status": "pending",
+      "transactionId": null
+    },
+    {
+      "id": "cmuuibvp70006oi4qtm58go87",
+      "createdAt": "2026-10-05T00:24:12.858Z",
+      "filename": "struk-2026-10-05-00-24-12.jpg",
+      "merchant": "Tokopedia",
+      "totalAmount": 139000,
+      "date": "2026-10-05",
+      "suggestedCategory": "cmutndzlw000ko8y19gf2qbpf",
+      "status": "pending",
+      "transactionId": null
+    },
+    {
+      "id": "cmuuilq01000foi4q4j55hneg",
+      "createdAt": "2026-10-05T00:31:52.033Z",
+      "filename": "test-struk-indomaret.jpg",
+      "merchant": "Indomaret",
+      "totalAmount": 107000,
+      "date": "2026-10-05",
+      "suggestedCategory": "cmutndzlu000co8y186i42oy0",
+      "status": "pending",
+      "transactionId": null
+    }
+  ]
+}
